@@ -189,8 +189,8 @@ jobs:
           restore-keys: |
             kernel-${{ inputs.kernel_toolchain }}-${{ matrix.kernel_version }}-
 
-      - name: name: Compile the kernel [ ${{ matrix.kernel_version }} ]
-        uses: uses: dimannb-design/amlogic-s9xxx-armbian@main
+      - name: Compile the kernel [ ${{ matrix.kernel_version }} ]
+        uses: dimannb-design/amlogic-s9xxx-armbian@main
         if: ${{ steps.disk.outputs.status == 'success' && !cancelled() }}
         with:
           build_target: kernel
